@@ -22,7 +22,7 @@ namespace Degenerate.Passes
                     if (body.Instructions[i].OpCode == CilOpCodes.Ldstr)
                     {
                         string value = body.Instructions[i].Operand.ToString();
-                        if (!value.Contains("==") || body.Instructions[i + 1].OpCode != CilOpCodes.Call)
+                        if (!value.Contains('=') || body.Instructions[i + 1].OpCode != CilOpCodes.Call)
                             continue;
 
                         byte[] array = Convert.FromBase64String(value);
