@@ -55,7 +55,7 @@ if (File.Exists(path))
 
     var result = builder.CreateImage(image);
 
-    Console.WriteLine("Construction finished with {0} errors.", result.DiagnosticBag.Exceptions.Count);
+    Console.WriteLine($"Construction finished with {result.DiagnosticBag.Exceptions.Count} errors.");
     foreach (var error in result.DiagnosticBag.Exceptions)
         Console.WriteLine(error.Message);
 

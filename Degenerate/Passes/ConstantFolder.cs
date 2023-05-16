@@ -19,12 +19,12 @@ namespace Degenerate.Passes
                 try
                 {
                     if (body.Instructions[i].OpCode == CilOpCodes.Ldc_I4 &&
-                        (body.Instructions[i + 1].OpCode == CilOpCodes.Add || body.Instructions[i + 1].OpCode == CilOpCodes.Sub) &&
-                        body.Instructions[i + 2].OpCode == CilOpCodes.Ldc_I4)
+                        body.Instructions[i + 1].OpCode == CilOpCodes.Ldc_I4 &&
+                        (body.Instructions[i + 2].OpCode == CilOpCodes.Add || body.Instructions[i + 2].OpCode == CilOpCodes.Sub))
                     {
                         int lhs = (int)body.Instructions[i].Operand;
-                        int rhs = (int)body.Instructions[i + 2].Operand;
-                        var op = body.Instructions[i + 1].OpCode;
+                        int rhs = (int)body.Instructions[i + 1].Operand;
+                        var op = body.Instructions[i + 2].OpCode;
 
                         if (op == CilOpCodes.Add)
                         {
