@@ -1,1 +1,2 @@
 # Degenerate
+Tool I used to deobfuscate various .NET binaries when de4dot and the like failed. Project is not intended to produce still valid binaries but rather focuses on cleaning them up for static analysis. Code is not split up into modules for each tool but rather I just update the passes as I see fit for very specific use cases, therefore the passes are not to be used as is as they contain a lot of edge cases and will most likely produce terrible deobfuscated code in a general setting.
